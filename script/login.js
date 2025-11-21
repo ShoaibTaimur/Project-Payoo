@@ -9,12 +9,12 @@ document.getElementById('login-btn').addEventListener('click', function (event) 
                 window.location.href="./main.html"
             }
             else {
-                console.log('Invalid Pin or Pin must be within 4 character');
+                alert('Invalid Pin or Pin must be within 4 character');
             }
 
         }
         else {
-            console.log('Invalid Account No');
+            alert('Invalid Account No');
         }
     }
     else {
