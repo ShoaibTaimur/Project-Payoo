@@ -65,7 +65,7 @@
                             <img class="w-[24px] mx-auto" src="assets/purse1.png" alt="">
                             <h3 class="text-[14px] text-[rgba(8,8,8,0.7)]">Pay Bill</h3>
                         </div>
-                        <div
+                        <div id="transaction-box"
                             class="box border-[1px] border-[rgba(8,8,8,0.1)] py-[20px] px-[10px] text-center rounded-lg hover:bg-blue-300 hover:shadow-lg transition">
                             <img class="w-[24px] mx-auto" src="assets/transaction1.png" alt="">
                             <h3 class="text-[14px] text-[rgba(8,8,8,0.7)]">Transactions</h3>
@@ -135,7 +135,7 @@
                                     </select>
                                     <fieldset class="fieldset">
                                         <label class="label">Account Number</label>
-                                        <input id="account-no" type="number"
+                                        <input id="cash-out-account-no" type="number"
                                             class="input no-arrows rounded-3xl bg-[#F4F5F7] border-none"
                                             placeholder="type your number" required />
                                         <label class="label">Pin</label>
@@ -154,12 +154,19 @@
                         </div>
                     </div>
                 </section>
+                <section id="transaction-history" class="bg-[#F4F5F7] px-[24px] ">
+                    <h1 class="outfit text-[18px] font-semibold">Transaction History</h1>
+                    <div id="transaction-container">
+                        
+                    </div>
+                </section>
             </section>
         </header>
     </section>
-    <script src="script/addMoney.js"></script>
     <script src="script/toggle.js"></script>
+    <script src="script/addMoney.js"></script>
     <script src="script/cashout.js"></script>
+    <script src="script/transaction.js"></script>
 </body>
 
 </html>
