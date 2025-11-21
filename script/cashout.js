@@ -1,6 +1,6 @@
 document.getElementById('cash-out-btn').addEventListener('click', function (event) {
     event.preventDefault();
-    handleToggle('transaction-history','none');
+    handleToggle('transaction-history', 'none');
     const Amount = document.getElementById('cash-out-amount').value;
     const convertedAmount = parseFloat(Amount);
 
@@ -11,14 +11,19 @@ document.getElementById('cash-out-btn').addEventListener('click', function (even
     const convertedPin = parseInt(Pin);
     const mainBalance = document.getElementById('main-balance').innerText;
     const convertedMainBalance = parseFloat(mainBalance);
+    const bank = document.getElementById("cash-out-allbank").value;
 
     if (convertedPin === 1234) {
+        if (convertedAmount > convertedMainBalance || convertedAmount < 0) {
+            alert("Invalid transation attempt");
+            return;
+        }
         const minus = convertedMainBalance - convertedAmount;
         document.getElementById('main-balance').innerText = minus;
 
         const p = document.createElement('p');
-        p.innerText = `Cashed-Out ${convertedAmount} to ${AccountNo} account`;
-        p.classList.add("shadow-lg", "bg-white", "rounded-xl", "p-2","mt-[8px]")
+        p.innerText = `Cashed-Out ${convertedAmount} to ${AccountNo} account [${bank}]`;
+        p.classList.add("shadow-lg", "bg-white", "rounded-xl", "p-2", "mt-[8px]")
         tranContainer.appendChild(p);
     }
     else {

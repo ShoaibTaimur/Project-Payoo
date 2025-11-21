@@ -15,6 +15,7 @@
             font-family: "Outfit", sans-serif;
         }
     </style>
+    <link rel="shortcut icon" href="payoo.png" type="image/x-icon">
 </head>
 
 <body class="bg-slate-800">
@@ -79,7 +80,8 @@
                             <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                                 <div class="card-body">
                                     <legend class="outfit text-[16px] font-medium">Select Bank</legend>
-                                    <select class="select bg-[#F4F5F7] border-none rounded-3xl" required>
+                                    <select id="add-money-allbank" class="select bg-[#F4F5F7] border-none rounded-3xl"
+                                        required>
                                         <option disabled selected>Pick a Bank</option>
                                         <option value="Bkash"><img class="w-5" src="assets/bkash.svg" alt="">Bkash
                                         </option>
@@ -120,7 +122,8 @@
                             <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                                 <div class="card-body">
                                     <legend class="outfit text-[16px] font-medium">Select Bank</legend>
-                                    <select class="select bg-[#F4F5F7] border-none rounded-3xl" required>
+                                    <select id="cash-out-allbank" class="select bg-[#F4F5F7] border-none rounded-3xl"
+                                        required>
                                         <option disabled selected>Pick a Bank</option>
                                         <option value="Bkash"><img class="w-5" src="assets/bkash.svg" alt="">Bkash
                                         </option>
@@ -139,7 +142,8 @@
                                             class="input no-arrows rounded-3xl bg-[#F4F5F7] border-none"
                                             placeholder="type your number" required />
                                         <label class="label">Pin</label>
-                                        <input id="cash-out-pin" type="text" class="input rounded-3xl bg-[#F4F5F7] border-none"
+                                        <input id="cash-out-pin" type="text"
+                                            class="input rounded-3xl bg-[#F4F5F7] border-none"
                                             placeholder="type your pin" required />
                                         <label class="label">Amount</label>
                                         <input id="cash-out-amount" type="number"
@@ -157,7 +161,6 @@
                 <section id="transaction-history" class="bg-[#F4F5F7] px-[24px] ">
                     <h1 class="outfit text-[18px] font-semibold">Transaction History</h1>
                     <div id="transaction-container">
-                        
                     </div>
                 </section>
             </section>

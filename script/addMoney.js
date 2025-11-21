@@ -10,14 +10,19 @@ document.getElementById('add-money-btn').addEventListener('click', function (eve
     const convertedPin = parseInt(Pin);
     const mainBalance = document.getElementById('main-balance').innerText;
     const convertedMainBalance = parseFloat(mainBalance);
+    const bank = document.getElementById("add-money-allbank").value;
 
     if (convertedPin === 1234) {
+        if (convertedAmount < 0) {
+            alert("Invalid transaction attempt");
+            return;
+        }
         const sum = convertedMainBalance + convertedAmount;
         document.getElementById('main-balance').innerText = sum;
 
         const p = document.createElement('p');
-        p.innerText = `Added ${convertedAmount} from ${AccountNo} account`;
-        p.classList.add("shadow-lg", "bg-white", "rounded-xl", "p-2","mt-[8px]")
+        p.innerText = `Added ${convertedAmount} from ${AccountNo} account [${bank}]`;
+        p.classList.add("shadow-lg", "bg-white", "rounded-xl", "p-2", "mt-[8px]")
         tranContainer.appendChild(p);
 
 
