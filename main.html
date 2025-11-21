@@ -25,7 +25,7 @@
                     <img class="w-[50px] h-[48px]" src="assets/Group.png" alt="">
                     <div>
                         <h1 class="outfit font-extrabold text-[18px]">
-                            $ 4500
+                            $ <span id="main-balance">4500</span>
                         </h1>
                         <p class="outfit text-[14px] font-normal text-[rgba(8,8,8,0.5)]">Available Balance</p>
                     </div>
@@ -40,47 +40,47 @@
                         with
                         us. Cashout charge is low and </p>
                     <div class="cards grid grid-cols-3 gap-[15px] mt-14">
-                        <div
-                            class="box border-[1px] border-[rgba(8,8,8,0.1)] py-[20px] px-[10px] text-center rounded-lg">
+                        <div id="add-money-box"
+                            class="box border-[1px] border-[rgba(8,8,8,0.1)] py-[20px] px-[10px] text-center rounded-lg hover:bg-blue-300 hover:shadow-lg transition">
                             <img class="w-[24px] mx-auto" src="assets/wallet1.png" alt="">
                             <h3 class="text-[14px] text-[rgba(8,8,8,0.7)]">Add money</h3>
                         </div>
-                        <div
-                            class="box border-[1px] border-[rgba(8,8,8,0.1)] py-[20px] px-[10px] text-center rounded-lg">
+                        <div id="cash-out-box"
+                            class="box border-[1px] border-[rgba(8,8,8,0.1)] py-[20px] px-[10px] text-center rounded-lg hover:bg-blue-300 hover:shadow-lg transition">
                             <img class="w-[24px] mx-auto" src="assets/send1.png" alt="">
                             <h3 class="text-[14px] text-[rgba(8,8,8,0.7)]">Cashout</h3>
                         </div>
                         <div
-                            class="box border-[1px] border-[rgba(8,8,8,0.1)] py-[20px] px-[10px] text-center rounded-lg">
+                            class="box border-[1px] border-[rgba(8,8,8,0.1)] py-[20px] px-[10px] text-center rounded-lg hover:bg-blue-300 hover:shadow-lg transition">
                             <img class="w-[24px] mx-auto" src="assets/money1.png" alt="">
                             <h3 class="text-[13px] text-[rgba(8,8,8,0.7)]">Transfer Money</h3>
                         </div>
                         <div
-                            class="box border-[1px] border-[rgba(8,8,8,0.1)] py-[20px] px-[10px] text-center rounded-lg">
+                            class="box border-[1px] border-[rgba(8,8,8,0.1)] py-[20px] px-[10px] text-center rounded-lg hover:bg-blue-300 hover:shadow-lg transition">
                             <img class="w-[24px] mx-auto" src="assets/bonus1.png" alt="">
                             <h3 class="text-[14px] text-[rgba(8,8,8,0.7)]">Get Bonus</h3>
                         </div>
                         <div
-                            class="box border-[1px] border-[rgba(8,8,8,0.1)] py-[20px] px-[10px] text-center rounded-lg">
+                            class="box border-[1px] border-[rgba(8,8,8,0.1)] py-[20px] px-[10px] text-center rounded-lg hover:bg-blue-300 hover:shadow-lg transition">
                             <img class="w-[24px] mx-auto" src="assets/purse1.png" alt="">
                             <h3 class="text-[14px] text-[rgba(8,8,8,0.7)]">Pay Bill</h3>
                         </div>
                         <div
-                            class="box border-[1px] border-[rgba(8,8,8,0.1)] py-[20px] px-[10px] text-center rounded-lg">
+                            class="box border-[1px] border-[rgba(8,8,8,0.1)] py-[20px] px-[10px] text-center rounded-lg hover:bg-blue-300 hover:shadow-lg transition">
                             <img class="w-[24px] mx-auto" src="assets/transaction1.png" alt="">
                             <h3 class="text-[14px] text-[rgba(8,8,8,0.7)]">Transactions</h3>
                         </div>
                     </div>
                 </section>
-                <section class="bg-[#F4F5F7] px-[24px] ">
+                <section id="add-money" class="bg-[#F4F5F7] px-[24px] ">
                     <h2 class="outfit text-[18px] font-semibold">Add Money</h2>
                     <div class="">
                         <div class="hero-content flex-col lg:flex-row-reverse">
                             <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                                 <div class="card-body">
                                     <legend class="outfit text-[16px] font-medium">Select Bank</legend>
-                                    <select class="select bg-[#F4F5F7] border-none rounded-3xl">
-                                        <option disabled selected>Pick a color</option>
+                                    <select class="select bg-[#F4F5F7] border-none rounded-3xl" required>
+                                        <option disabled selected>Pick a Bank</option>
                                         <option value="Bkash"><img class="w-5" src="assets/bkash.svg" alt="">Bkash
                                         </option>
                                         <option value="Nagad"><img class="w-5" src="assets/Nagad_Logo_full-498x700.png"
@@ -98,11 +98,56 @@
                                             class="input no-arrows rounded-3xl bg-[#F4F5F7] border-none"
                                             placeholder="type your number" required />
                                         <label class="label">Pin</label>
-                                        <input id="account-pass" type="text"
-                                            class="input rounded-3xl bg-[#F4F5F7] border-none"
+                                        <input id="pin" type="text" class="input rounded-3xl bg-[#F4F5F7] border-none"
                                             placeholder="type your pin" required />
-                                        <button id="login-btn"
-                                            class="btn btn-neutral mt-4 rounded-3xl bg-blue-600 border-none">Add Money</button>
+                                        <label class="label">Amount</label>
+                                        <input id="amount" type="number"
+                                            class="input no-arrows rounded-3xl bg-[#F4F5F7] border-none"
+                                            placeholder="type your amount" required />
+                                        <button id="add-money-btn"
+                                            class="btn btn-neutral mt-4 rounded-3xl bg-blue-600 border-none">Add
+                                            Money</button>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="cash-out" class="bg-[#F4F5F7] px-[24px] ">
+                    <h2 class="outfit text-[18px] font-semibold">Cash Out</h2>
+                    <div class="">
+                        <div class="hero-content flex-col lg:flex-row-reverse">
+                            <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                                <div class="card-body">
+                                    <legend class="outfit text-[16px] font-medium">Select Bank</legend>
+                                    <select class="select bg-[#F4F5F7] border-none rounded-3xl" required>
+                                        <option disabled selected>Pick a Bank</option>
+                                        <option value="Bkash"><img class="w-5" src="assets/bkash.svg" alt="">Bkash
+                                        </option>
+                                        <option value="Nagad"><img class="w-5" src="assets/Nagad_Logo_full-498x700.png"
+                                                alt="">Nagad
+                                        </option>
+                                        <option value="Upay"><img class="w-5" src="assets/Upay_logo.svg.png" alt="">Upay
+                                        </option>
+                                        <option value="Visa"><img class="w-5"
+                                                src="assets/Visa-Logo-Transparent-File.png" alt="">Visa
+                                        </option>
+                                    </select>
+                                    <fieldset class="fieldset">
+                                        <label class="label">Account Number</label>
+                                        <input id="account-no" type="number"
+                                            class="input no-arrows rounded-3xl bg-[#F4F5F7] border-none"
+                                            placeholder="type your number" required />
+                                        <label class="label">Pin</label>
+                                        <input id="cash-out-pin" type="text" class="input rounded-3xl bg-[#F4F5F7] border-none"
+                                            placeholder="type your pin" required />
+                                        <label class="label">Amount</label>
+                                        <input id="cash-out-amount" type="number"
+                                            class="input no-arrows rounded-3xl bg-[#F4F5F7] border-none"
+                                            placeholder="type your amount" required />
+                                        <button id="cash-out-btn"
+                                            class="btn btn-neutral mt-4 rounded-3xl bg-blue-600 border-none">Cash
+                                            Out</button>
                                     </fieldset>
                                 </div>
                             </div>
@@ -112,6 +157,9 @@
             </section>
         </header>
     </section>
+    <script src="script/addMoney.js"></script>
+    <script src="script/toggle.js"></script>
+    <script src="script/cashout.js"></script>
 </body>
 
 </html>
