@@ -1,11 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payoo MFS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        .outfit {
+            font-family: "Outfit", sans-serif;
+        }
+    </style>
 </head>
-<body>
-    <h1>Hello</h1>
+
+<body class="bg-slate-800">
+    <section class="max-w-md min-h-screen bg-[rgba(244,245,247,1)] mx-auto py-6">
+        <header>
+            <nav class="flex justify-around items-center">
+                <div class="flex items-center">
+                    <img class="w-16" src="assets/Group.png" alt="">
+                    <div>
+                        <h1 class="outfit font-extrabold text-[18px]">
+                            $ 4500
+                        </h1>
+                        <p class="outfit text-[14px] font-normal text-[rgba(8,8,8,0.5)]">Available Balance</p>
+                    </div>
+                </div>
+                <button class="btn btn-neutral btn-outline border-none">Logout</button>
+            </nav>
+        </header>
+    </section>
 </body>
+
 </html>
