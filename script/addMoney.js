@@ -14,7 +14,11 @@ document.getElementById('add-money-btn').addEventListener('click', function (eve
 
     if (convertedPin === 1234) {
         if (convertedAmount < 0) {
-            alert("Invalid transaction attempt");
+            Swal.fire({
+                title: "Failed",
+                text: "Invalid Transaction",
+                icon: "warning"
+            });
             return;
         }
         const sum = convertedMainBalance + convertedAmount;
@@ -24,6 +28,11 @@ document.getElementById('add-money-btn').addEventListener('click', function (eve
         p.innerText = `Added ${convertedAmount} from ${AccountNo} account [${bank}]`;
         p.classList.add("shadow-lg", "bg-white", "rounded-xl", "p-2", "mt-[8px]")
         tranContainer.appendChild(p);
+        Swal.fire({
+            title: "Good job!",
+            text: "Added Money",
+            icon: "success"
+        });
 
 
     }

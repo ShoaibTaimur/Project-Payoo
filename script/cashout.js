@@ -15,7 +15,11 @@ document.getElementById('cash-out-btn').addEventListener('click', function (even
 
     if (convertedPin === 1234) {
         if (convertedAmount > convertedMainBalance || convertedAmount < 0) {
-            alert("Invalid transation attempt");
+            Swal.fire({
+                title: "Failed",
+                text: "Invalid Transaction",
+                icon: "warning"
+            });
             return;
         }
         const minus = convertedMainBalance - convertedAmount;
@@ -25,6 +29,11 @@ document.getElementById('cash-out-btn').addEventListener('click', function (even
         p.innerText = `Cashed-Out ${convertedAmount} to ${AccountNo} account [${bank}]`;
         p.classList.add("shadow-lg", "bg-white", "rounded-xl", "p-2", "mt-[8px]")
         tranContainer.appendChild(p);
+        Swal.fire({
+            title: "Good job!",
+            text: "Cashout Successful",
+            icon: "success"
+        });
     }
     else {
         alert('Invalid Pin');
